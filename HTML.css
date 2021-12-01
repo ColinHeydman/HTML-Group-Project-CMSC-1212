@@ -1,1 +1,23 @@
 @charset "utf-8";
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li{
+  display: inline-block;
+	width:20.56%;
+  background-color: #A8290E;
+  text-decoration: none;
+	float:left;
+	text-align: center;
+	padding:2.22%;
+}
+li:hover {
+  background-color: #6F1000;
+  color: white;
+}
+a:link {
+	text-decoration: none;
+	color:white;
