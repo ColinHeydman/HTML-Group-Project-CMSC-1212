@@ -9,5 +9,5 @@ Made merchandise css
 
 
 ------Colin------
-
+Made the trivia quiz page 
 
