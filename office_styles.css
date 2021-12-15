@@ -1,19 +1,25 @@
 @charset "utf-8";
-
 @font-face {
     font-family: StaffMeetingPlain;
     src: url(StaffMeetingPlain.ttf) format('ttf');
 }
 
+/*
+   Filename: office_styles.css
+
+*/
+
 /* HTML and Body Styles */
 
 html {
+    height: 100%;
     background: #FFFAF0;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 12px;
 }
 
 body {
+   height: 100%;
    display: -webkit-flex;
    display: flex;
    -webkit-flex-flow: row wrap;
@@ -35,8 +41,8 @@ p {
 /* Header Styles */
 
 body > header {
-   background: url(office_top.png) center/cover no-repeat;
-   width: 100%;
+    background: url(office_top_test.png) center/cover no-repeat;
+    width: 100%;
 }
 
 body > header > h1 {
@@ -45,45 +51,140 @@ body > header > h1 {
     padding: 10px;
     font-size: 1.8em;
     color: rgb(90, 57, 57);
-    text-shadow: rgb(237, 237, 134) 0px 0px 1px, rgb(237, 237, 134) 0px 0px 2px, rgb(237, 237, 134) 0px 0px 5px, rgb(237, 237, 134) 0px 0px 8px, rgb(237, 237, 134) 0px 0px 10px, rgb(237, 237, 134) 0px 0px 15px;
+    text-shadow: rgb(237, 237, 134) 0px 0px 1px, 
+        rgb(237, 237, 134) 0px 0px 2px, 
+        rgb(237, 237, 134) 0px 0px 5px, 
+        rgb(237, 237, 134) 0px 0px 8px, 
+        rgb(237, 237, 134) 0px 0px 10px, 
+        rgb(237, 237, 134) 0px 0px 15px;
 }
 
 
 /* Top Navigation Styles */
-
-nav#top ul {
+.navigation {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row nowrap;
     flex-flow: row nowrap;
-    -webkit-justify-content: center;
-    justify-content: center;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
     -webkit-align-items: center;
     align-items: center;
-    background-color: #3098FA;
-    height: 50px;
+    height: 40px;
+    background: #fff;
+    border: solid;
+    border-width: 3px;
+    border-color: cadetblue;
+    border-radius: 10px;
 }
 
-nav#top ul li {
-    -webkit-flex: 0 1 80px;
+:root {
+    --clr: cadetblue;
+}
+
+
+.navigation ul {
+    margin: auto;
+    display: flex;
+    width: 350px;
+}
+
+.navigation ul li {
+    margin: auto;
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 40px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr);
+    opacity: 1;
+}
+
+.navigation ul li:hover a .icon {
+    transform: translateY(-45px);
+    opacity: 0;
+}
+
+.navigation ul li a .text {
     font-family: StaffMeetingPlain;
-    flex: 0 1 80px;
-    margin: 10px;
+    position: absolute;
+    color: var(--clr);
+    font-weight: 400;
+    font-size: 1.25em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-nav#top ul li a {
-   color: white;
-   display: block;
-   font-size: 2em;
-   text-align: center;
-   padding: 50% 0%;
+.navigation ul li:hover a .text {
+    opacity: 1;
+    transform: translateY(-5px);
 }
 
-nav#top ul li a:hover, nav#top ul li a:active {
-   color: rgb(255, 0, 0);
-   text-shadow: 0px 0px 2px black, 0px 0px 15px white;
+.indicator {
+    position: absolute;
+    top: -70%;
+    right: 500px;
+    width: 70px;
+    height: 70px;
+    background: #FFFAF0;
+    border-radius: 50%;
+    border: 4px solid var(--clr);
+    transition: 0.5s;
 }
 
+.indicator::before {
+    content: '';
+    position: absolute;
+    background: transparent;
+    border-top-right-radius: 10px;
+    box-shadow: 1px -10px 0 0 var(--clr);
+}
+
+.indicator::after {
+    content: '';
+    position: absolute;
+    background: transparent;
+    border-top-left-radius: 10px;
+    box-shadow: -1px -10px 0 0 var(--clr);
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator {
+    transform: translateX(calc(10px * 0));
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator {
+    transform: translateX(calc(90px * 1));
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator {
+    transform: translateX(calc(88px * 2));
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator {
+    transform: translateX(calc(88px * 3));
+}
 
 /* Section Styles */
 
@@ -131,10 +232,12 @@ article {
 /* Aside  Styles */
 
 aside {
-   background-color: rgb(233, 233, 148);
-   color: rgb(96, 96, 28);   
-   -webkit-flex: 1 2 200px;
-   flex: 1 2 200px;   
+    height: 100%;
+    background-color: #0aaadb;
+    color: rgb(96, 96, 28);
+    -webkit-flex: 1 2 200px;
+    flex: 1 2 200px;
+    overflow-y: scroll;
 }
 
 aside h1 {
@@ -156,11 +259,26 @@ aside a {
    color: rgb(234, 44, 234);
 }
 
-aside img {
-    width: 50%;
-    display: block;
-    margin: auto;
+div.gallery {
+    margin: auto 25%;
+    float: left;
+    width: 180px;
 }
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
 
 /* Description List Styles */
 
