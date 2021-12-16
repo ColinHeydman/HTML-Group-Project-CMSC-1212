@@ -37,7 +37,6 @@ p {
    margin: 15px;
 }
 
-
 /* Header Styles */
 
 body > header {
@@ -154,22 +153,6 @@ body > header > h1 {
     transition: 0.5s;
 }
 
-.indicator::before {
-    content: '';
-    position: absolute;
-    background: transparent;
-    border-top-right-radius: 10px;
-    box-shadow: 1px -10px 0 0 var(--clr);
-}
-
-.indicator::after {
-    content: '';
-    position: absolute;
-    background: transparent;
-    border-top-left-radius: 10px;
-    box-shadow: -1px -10px 0 0 var(--clr);
-}
-
 .navigation ul li:nth-child(1).active ~ .indicator {
     transform: translateX(calc(10px * 0));
 }
@@ -184,42 +167,6 @@ body > header > h1 {
 
 .navigation ul li:nth-child(4).active ~ .indicator {
     transform: translateX(calc(88px * 3));
-}
-
-/* Section Styles */
-
-section {
-    background-color: #6495ED;
-    padding-bottom: 15px;
-}
-
-section h1 {
-    font-size: 2.5em;
-    color: #00008B;
-    text-shadow: white -2px 0px 1px, white -5px 0px 30px;
-    padding: 20px 15px 10px 0px;
-    text-align: right
-}
-
-section img {
-   width: 25%;
-   float: left;
-   display: block;
-   margin: 20px 20px 10px 15px;
-}
-
-section p {
-   margin-bottom: 0px;
-}
-
-section a {
-   color: rgb(58, 58, 28);
-}
-
-section::after {
-   content: "";
-   display: table;
-   clear: both;
 }
 
 /* Article Styles */
@@ -279,7 +226,6 @@ div.desc {
     text-align: center;
 }
 
-
 /* Description List Styles */
 
 dl {
@@ -314,7 +260,7 @@ footer p {
     color: #3098FA;
     font-size: 0.9em;
     text-align: center;
-    background-color: ##FFF8DC;
+    background-color: #FFF8DC;
     margin: 0px;
     padding: 10px 0px;
 }
