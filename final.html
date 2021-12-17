@@ -2,30 +2,26 @@
 <html lang="en">
 <head>
     <!--
-        
      Name: Chevy Rios
 
-     Filename: events.html
+     Filename: final.html
 
     -->
 
-    <title>The Office Fanpage Events page</title>
+    <title>The Office Fanpage Homepage</title>
     <meta charset="utf-8" />
     <link href="office_reset.css" rel="stylesheet" />
     <link href="office_styles.css" rel="stylesheet" />
-    <link href="office_calendar.css" rel="stylesheet" />
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
-    <script src="office_events.js" defer></script>
-    <script src="office_calendar.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-
 <body>
     <header>
         <h1></h1>
         <div class="navigation">
-            <ul>
+            <a id="navicon" href="#"><ion-icon name="menu-outline"></ion-icon></a>
+            <ul class="nav_menu" id="navicon">
                 <li class="list active">
                     <a href="home.html">
                         <span class="icon">
@@ -62,9 +58,10 @@
             </ul>
         </div>
     </header>
-    <article>
-        <div id="calendar"></div>
-    </article>
+    <section id="paySection">
+        <h1>Order Complete</h1>
+        <p>Thank you for your order!</p>
+    </section>
     <footer>
         <nav id="bottom">
             <ul>

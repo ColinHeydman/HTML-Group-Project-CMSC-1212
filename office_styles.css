@@ -2,9 +2,15 @@
 @font-face {
     font-family: StaffMeetingPlain;
     src: url(StaffMeetingPlain.ttf) format('ttf');
+    font-family: JMH Typewriter dry;
+    src: url(JMH Typewriter dry.oft) format('oft');
+    font-family: JMH Typewriter dry-Bold;
+    src: url(JMH Typewriter dry-Bold.oft) format('oft');
 }
 
 /*
+   Name: Chevy Rios
+
    Filename: office_styles.css
 
 */
@@ -12,23 +18,24 @@
 /* HTML and Body Styles */
 
 html {
-    height: 100%;
     background: #FFFAF0;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 12px;
 }
 
 body {
-   height: 100%;
-   display: -webkit-flex;
-   display: flex;
-   -webkit-flex-flow: row wrap;
-   flex-flow: row wrap;   
-   background: white;
-   max-width: 1024px;
-   min-width: 420px;
-   margin: 0px auto;
-   box-shadow: rgb(51, 51, 51) 10px 10px 25px,  rgb(51, 51, 51) -10px 10px 25px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    align-self: stretch;
+    background: white;
+    max-width: 1020px;
+    min-width: 420px;
+    margin: 0px auto;
+    box-shadow: rgb(51, 51, 51) 10px 10px 25px, rgb(51, 51, 51) -10px 10px 25px;
 }
 
 p {
@@ -58,6 +65,9 @@ body > header > h1 {
         rgb(237, 237, 134) 0px 0px 15px;
 }
 
+a#navicon {
+    display: none;
+}
 
 /* Top Navigation Styles */
 .navigation {
@@ -179,7 +189,7 @@ article {
 /* Aside  Styles */
 
 aside {
-    height: 100%;
+    height: 500px;
     background-color: #0aaadb;
     color: rgb(96, 96, 28);
     -webkit-flex: 1 2 200px;
@@ -249,6 +259,326 @@ dd p {
    margin: 0px 0px 5px 10px;
 }
 
+/* Section Styles */
+
+section#summary {
+    -webkit-flex: 1 1 50px;
+    flex: 1 1 50px;
+    padding: 20px 0px 10px 20px;
+}
+
+section#summary h1 {
+    font-family: JMH Typewriter dry;
+    font-size: 1.8em;
+    letter-spacing: 0.1em;
+    line-height: 1.2em;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+section#summary h2 {
+    font-size: 1.25em;
+    font-weight: normal;
+}
+
+section#summary h3 {
+    font-size: 1em;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+section#summary > img {
+    display: block;
+    width: 50%;
+    margin: 0px auto;
+}
+
+section#summary p {
+    font-size: 0.9em;
+    text-align: justify;
+}
+
+section#orderSection {
+    -webkit-flex: 1 1 200px;
+    flex: 1 1 200px;
+    margin: 20px;
+}
+
+/* Order Table Styles */
+
+table#cartTable {
+    margin: 15px;
+    width: 95%;
+    border-collapse: collapse;
+}
+
+form#cart fieldset {
+    border: none;
+    margin-left: -10px;
+}
+
+form#cart input[type="text"] {
+    background-color: rgba(240, 233, 222, 0.5);
+}
+
+table#cartTable caption {
+    font-size: 1.3em;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    text-align: left;
+    caption-side: top;
+    margin-bottom: 20px;
+}
+
+table#cartTable td {
+    height: 30px;
+    vertical-align: top;
+}
+
+form#cart input[type="text"] {
+    color: rgb(101, 101, 101);
+}
+
+form#cart select {
+    display: inline-block;
+    margin-left: 10px;
+    color: rgb(101, 101, 101);
+}
+
+table#cartTable tr td:last-of-type input {
+    text-align: right;
+    border: none;
+}
+
+table#cartTable tr:nth-of-type(3) {
+    border-bottom: 1px solid rgb(151, 151, 151);
+}
+
+table#cartTable tr:nth-of-type(2) td, table#cartTable tr:nth-of-type(4) td {
+    padding-top: 15px;
+}
+
+table#cartTable tr:nth-of-type(5) td {
+    border-bottom: 6px double rgb(151, 151, 151);
+}
+
+table#cartTable tr:last-of-type td {
+    padding-top: 15px;
+}
+
+table#cartTable td.rightA {
+    text-align: right;
+    padding-right: 10px;
+}
+
+form#cart fieldset label {
+    display: block;
+}
+
+form#cart input#buttonAdd {
+    display: block;
+    width: 120px;
+    height: 35px;
+    margin: 15px auto;
+    background-color: rgba(232, 218, 201, 0.8);
+    font-size: 1.3em;
+    border-radius: 20px;
+}
+
+/* Order Table Styles */
+
+table#orderTable {
+    font-family: JMH Typewriter dry;
+    margin: 30px 0px 0px 45px;
+    width: 65%;
+    border-collapse: collapse;
+    color: rgb(151, 151, 151);
+}
+
+form#order input {
+    background-color: transparent;
+    border: none;
+    color: rgb(151, 151, 151);
+}
+
+table#orderTable td {
+    height: 20px;
+    vertical-align: top;
+}
+
+form#order input#modelQty {
+    width: 3em;
+}
+
+form#order input#modelName, form#order input#shippingType {
+    width: 15em;
+}
+
+form#order input {
+    color: rgb(151, 151, 151);
+}
+
+table#orderTable tr td:last-of-type input {
+    text-align: right;
+    border: none;
+}
+
+table#orderTable tr:nth-of-type(2) {
+    border-bottom: 1px solid rgb(151, 151, 151);
+}
+
+table#orderTable tr:nth-of-type(2) td, table#orderTable tr:nth-of-type(4) td {
+    padding-top: 15px;
+}
+
+table#orderTable tr:nth-of-type(4) td {
+    border-bottom: 4px double rgb(151, 151, 151);
+}
+
+table#orderTable tr:last-of-type td {
+    padding-top: 15px;
+}
+
+table#orderTable td.rightA {
+    text-align: right;
+    padding-right: 10px;
+}
+
+/* Credit Form Styles */
+
+section#paySection {
+    -webkit-flex: 1 1 400px;
+    flex: 1 1 400px;
+    border-left: 4px double rgb(101, 101, 101);
+    min-height: 300px;
+    height: 100%;
+}
+
+section#paySection form#credit fieldset#cards {
+    display: block;
+    clear: left;
+}
+
+section#paySection p#footnote {
+    font-size: 1em;
+    text-align: left;
+    margin: 0px 10px 20px 140px;
+}
+
+section#paySection h1 {
+    font-family: JMH Typewriter dry-Bold;
+    text-align: center;
+    font-size: 2em;
+    letter-spacing: 0.15em;
+    margin: 20px 0px;
+    font-weight: normal;
+    color: rgb(57, 44, 28);
+}
+
+section#paySection p {
+    font-size: 1.3em;
+    padding: 8px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    color: rgb(57, 44, 28);
+}
+
+form#credit fieldset {
+    border: none;
+}
+
+form#credit fieldset#cards label:first-of-type {
+    text-align: right;
+    margin-left: 50px;
+}
+
+form#credit legend {
+    font-size: 1.3em;
+    padding: 8px;
+    width: 80%;
+    text-align: left;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    color: rgb(57, 44, 28);
+}
+
+/* Input and Label Styles */
+
+form#credit label {
+    display: block;
+    float: left;
+    clear: left;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    width: 180px;
+    text-align: right;
+    color: rgb(57, 44, 28);
+}
+
+form#credit input {
+    display: block;
+    float: left;
+    box-shadow: 0px 0px 15px white;
+}
+
+/* Radio Button Styles */
+
+form#credit label.cardLabel {
+    display: inline-block;
+    float: none;
+    width: auto;
+}
+
+form#credit fieldset#cards img {
+    display: inline-block;
+    margin-left: 5px;
+    box-shadow: 0px 0px 10px rgb(124, 92, 54);
+}
+
+form#credit input[type='radio'] {
+    display: inline-block;
+    width: auto;
+    float: none;
+    clear: none;
+}
+
+form#credit fieldset#cards {
+    text-align: left;
+    margin-left: 50px;
+}
+
+form#credit input#cvc {
+    width: 3em;
+}
+
+form#credit input#expDate {
+    width: 5em;
+}
+
+form#credit input#subButton {
+    display: block;
+    width: 180px;
+    height: 35px;
+    margin: 15px 0px 10px 200px;
+    background-color: rgba(232, 218, 201, 0.8);
+    font-size: 1.3em;
+    border-radius: 20px;
+    float: none;
+}
+
+/* Valid and Invalid Styles */
+
+input:invalid, input:focus:invalid {
+    outline: none;
+    background-color: rgba(221,147,148,0.2);
+}
+
+input:valid, input:focus:valid {
+    outline: none;
+    background-color: none;
+}
 
 /* Footer Styles */
 
@@ -301,4 +631,24 @@ nav#bottom {
 
 nav#bottom ul {
    flex: 0 1 150px;
+}
+
+/* small screen */
+@media all and (max-width: 480px) {
+    a#navicon {
+        display: block;
+    }
+
+    div ul.nav_menu {
+        display: none;
+    }
+
+    a#navicon:hover + ul, div ul.nav_menu:hover {
+        display: block;
+    }
+
+    body div ul.nav_menu > li {
+        float: none;
+        width: 100%;
+    }
 }
