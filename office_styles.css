@@ -274,22 +274,18 @@ section#summary h1 {
     line-height: 1.2em;
     font-weight: normal;
     margin-bottom: 10px;
-}
-
-section#summary h2 {
-    font-size: 1.25em;
-    font-weight: normal;
-}
-
-section#summary h3 {
-    font-size: 1em;
-    font-weight: normal;
-    margin-bottom: 20px;
+    text-align: center;
 }
 
 section#summary > img {
     display: block;
     width: 50%;
+    margin: 0px auto;
+}
+
+section#summary img#paymentImg {
+    display: block;
+    width: 75%;
     margin: 0px auto;
 }
 
@@ -306,22 +302,24 @@ section#orderSection {
 
 /* Order Table Styles */
 
-table#cartTable {
+table#orderTable {
+    font-family: StaffMeetingPlain;
     margin: 15px;
     width: 95%;
     border-collapse: collapse;
 }
 
-form#cart fieldset {
+form#orderForm fieldset {
     border: none;
     margin-left: -10px;
 }
 
-form#cart input[type="text"] {
+form#orderForm input[type="text"] {
     background-color: rgba(240, 233, 222, 0.5);
 }
 
-table#cartTable caption {
+table#orderTable caption {
+    font-family: JMH Typewriter dry;
     font-size: 1.3em;
     font-weight: bold;
     letter-spacing: 0.2em;
@@ -330,19 +328,172 @@ table#cartTable caption {
     margin-bottom: 20px;
 }
 
-table#cartTable td {
+table#orderTable td {
     height: 30px;
     vertical-align: top;
 }
 
-form#cart input[type="text"] {
+form#orderForm input#orderDate {
+    font-family: StaffMeetingPlain;
+    text-align: left;
+}
+
+form#orderForm input[type="text"] {
     color: rgb(101, 101, 101);
 }
 
-form#cart select {
+form#orderForm select {
     display: inline-block;
     margin-left: 10px;
     color: rgb(101, 101, 101);
+}
+
+table#orderTable tr:first-of-type {
+    border-bottom: 1px solid rgb(151, 151, 151);
+}
+
+table#orderTable tr td:last-of-type input {
+    text-align: right;
+    border: none;
+}
+
+table#orderTable tr:nth-of-type(3) {
+    border-bottom: 1px solid rgb(151, 151, 151);
+}
+
+table#orderTable tr:nth-of-type(2) td, table#orderTable tr:nth-of-type(4) td {
+    padding-top: 15px;
+}
+
+table#orderTable tr:nth-of-type(5) td {
+    border-bottom: 6px double rgb(151, 151, 151);
+}
+
+table#orderTable tr:last-of-type td {
+    padding-top: 15px;
+}
+
+table#orderTable td.rightA {
+    text-align: right;
+    padding-right: 10px;
+}
+
+form#orderForm fieldset label {
+    display: block;
+}
+
+form#orderForm input#buttonAdd {
+    display: block;
+    width: 120px;
+    height: 35px;
+    margin: 15px auto;
+    background-color: rgba(232, 218, 201, 0.8);
+    font-size: 1.3em;
+    border-radius: 20px;
+}
+
+/* Payment Form Styles */
+
+section#paySection {
+    -webkit-flex: 1 1 200px;
+    flex: 1 1 200px;
+    min-height: 300px;
+}
+
+section#paySection p {
+    -webkit-flex: 1 1 200px;
+    flex: 1 1 200px;
+    min-height: 300px;
+    text-align: center;
+}
+
+section#paySection > img {
+    display: block;
+    width: 45%;
+    margin: 0px 30%;
+}
+
+section#paySection form#payment fieldset#cards {
+    display: block;
+    clear: left;
+}
+
+section#paySection h1 {
+    font-family: JMH Typewriter dry;
+    text-align: center;
+    font-size: 2em;
+    letter-spacing: 0.15em;
+    margin: 20px 0px;
+    font-weight: normal;
+    color: rgb(57, 44, 28);
+}
+
+form#payment fieldset {
+    border: none;
+}
+
+form#payment fieldset#cards label:first-of-type {
+    text-align: right;
+    margin-left: 50px;
+}
+
+form#payment legend {
+    font-size: 1.3em;
+    padding: 8px;
+    width: 80%;
+    text-align: left;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    color: rgb(57, 44, 28);
+}
+
+/* Cart Table Styles */
+
+table#cartTable {
+    font-family: StaffMeetingPlain;
+    margin: 30px 0px 0px 45px;
+    width: 65%;
+    border-collapse: collapse;
+    color: rgb(151, 151, 151);
+}
+
+form#order input {
+    background-color: transparent;
+    border: none;
+    color: rgb(151, 151, 151);
+}
+
+table#cartTable caption {
+    font-family: JMH Typewriter dry;
+    font-size: 1.3em;
+    text-align: left;
+    color: rgb(151, 151, 151);
+    font-weight: normal;
+}
+
+table#cartTable td {
+    height: 20px;
+    vertical-align: top;
+}
+
+form#order input#orderDate {
+    text-align: right;
+}
+
+form#order input#qty {
+    width: 3em;
+}
+
+form#order input#modelName, form#order input#protectionName {
+    width: 15em;
+}
+
+form#order input {
+    color: rgb(151, 151, 151);
+}
+
+table#cartTable tr:first-of-type {
+    border-bottom: 1px solid rgb(151, 151, 151);
 }
 
 table#cartTable tr td:last-of-type input {
@@ -359,7 +510,7 @@ table#cartTable tr:nth-of-type(2) td, table#cartTable tr:nth-of-type(4) td {
 }
 
 table#cartTable tr:nth-of-type(5) td {
-    border-bottom: 6px double rgb(151, 151, 151);
+    border-bottom: 4px double rgb(151, 151, 151);
 }
 
 table#cartTable tr:last-of-type td {
@@ -371,141 +522,8 @@ table#cartTable td.rightA {
     padding-right: 10px;
 }
 
-form#cart fieldset label {
-    display: block;
-}
-
-form#cart input#buttonAdd {
-    display: block;
-    width: 120px;
-    height: 35px;
-    margin: 15px auto;
-    background-color: rgba(232, 218, 201, 0.8);
-    font-size: 1.3em;
-    border-radius: 20px;
-}
-
-/* Order Table Styles */
-
-table#orderTable {
-    font-family: JMH Typewriter dry;
-    margin: 30px 0px 0px 45px;
-    width: 65%;
-    border-collapse: collapse;
-    color: rgb(151, 151, 151);
-}
-
-form#order input {
-    background-color: transparent;
-    border: none;
-    color: rgb(151, 151, 151);
-}
-
-table#orderTable td {
-    height: 20px;
-    vertical-align: top;
-}
-
-form#order input#modelQty {
-    width: 3em;
-}
-
-form#order input#modelName, form#order input#shippingType {
-    width: 15em;
-}
-
-form#order input {
-    color: rgb(151, 151, 151);
-}
-
-table#orderTable tr td:last-of-type input {
-    text-align: right;
-    border: none;
-}
-
-table#orderTable tr:nth-of-type(2) {
-    border-bottom: 1px solid rgb(151, 151, 151);
-}
-
-table#orderTable tr:nth-of-type(2) td, table#orderTable tr:nth-of-type(4) td {
-    padding-top: 15px;
-}
-
-table#orderTable tr:nth-of-type(4) td {
-    border-bottom: 4px double rgb(151, 151, 151);
-}
-
-table#orderTable tr:last-of-type td {
-    padding-top: 15px;
-}
-
-table#orderTable td.rightA {
-    text-align: right;
-    padding-right: 10px;
-}
-
-/* Credit Form Styles */
-
-section#paySection {
-    -webkit-flex: 1 1 400px;
-    flex: 1 1 400px;
-    border-left: 4px double rgb(101, 101, 101);
-    min-height: 300px;
-    height: 100%;
-}
-
-section#paySection form#credit fieldset#cards {
-    display: block;
-    clear: left;
-}
-
-section#paySection p#footnote {
-    font-size: 1em;
-    text-align: left;
-    margin: 0px 10px 20px 140px;
-}
-
-section#paySection h1 {
-    font-family: JMH Typewriter dry-Bold;
-    text-align: center;
-    font-size: 2em;
-    letter-spacing: 0.15em;
-    margin: 20px 0px;
-    font-weight: normal;
-    color: rgb(57, 44, 28);
-}
-
-section#paySection p {
-    font-size: 1.3em;
-    padding: 8px;
-    width: 80%;
-    text-align: center;
-    margin: auto;
-    color: rgb(57, 44, 28);
-}
-
-form#credit fieldset {
-    border: none;
-}
-
-form#credit fieldset#cards label:first-of-type {
-    text-align: right;
-    margin-left: 50px;
-}
-
-form#credit legend {
-    font-size: 1.3em;
-    padding: 8px;
-    width: 80%;
-    text-align: left;
-    margin-left: 50px;
-    margin-bottom: 20px;
-    color: rgb(57, 44, 28);
-}
-
 /* Input and Label Styles */
-
-form#credit label {
+form#payment label {
     display: block;
     float: left;
     clear: left;
@@ -517,7 +535,7 @@ form#credit label {
     color: rgb(57, 44, 28);
 }
 
-form#credit input {
+form#payment input, form#payment select {
     display: block;
     float: left;
     box-shadow: 0px 0px 15px white;
@@ -525,43 +543,46 @@ form#credit input {
 
 /* Radio Button Styles */
 
-form#credit label.cardLabel {
+form#payment label.cardLabel {
     display: inline-block;
     float: none;
     width: auto;
 }
 
-form#credit fieldset#cards img {
+form#payment fieldset#cards img {
     display: inline-block;
     margin-left: 5px;
     box-shadow: 0px 0px 10px rgb(124, 92, 54);
 }
 
-form#credit input[type='radio'] {
+form#payment input[type='radio'] {
     display: inline-block;
     width: auto;
     float: none;
     clear: none;
 }
 
-form#credit fieldset#cards {
+form#payment fieldset#cards {
     text-align: left;
     margin-left: 50px;
 }
 
-form#credit input#cvc {
+form#payment span {
+    width: 30px;
+    text-align: center;
+    display: block;
+    float: left;
+}
+
+form#payment input#cvc {
     width: 3em;
 }
 
-form#credit input#expDate {
-    width: 5em;
-}
-
-form#credit input#subButton {
+form#payment input#subButton {
     display: block;
     width: 180px;
     height: 35px;
-    margin: 15px 0px 10px 200px;
+    margin: 0px 0px 10px 200px;
     background-color: rgba(232, 218, 201, 0.8);
     font-size: 1.3em;
     border-radius: 20px;
@@ -570,12 +591,12 @@ form#credit input#subButton {
 
 /* Valid and Invalid Styles */
 
-input:invalid, input:focus:invalid {
+input:invalid, input:focus:invalid, select:invalid, select:focus:invalid {
     outline: none;
     background-color: rgba(221,147,148,0.2);
 }
 
-input:valid, input:focus:valid {
+input:valid, input:focus:valid, select:valid, select:focus:valid {
     outline: none;
     background-color: none;
 }
@@ -639,15 +660,15 @@ nav#bottom ul {
         display: block;
     }
 
-    div ul.nav_menu {
+    div ul.navigation {
         display: none;
     }
 
-    a#navicon:hover + ul, div ul.nav_menu:hover {
+    a#navicon:hover + ul, div ul.navigation:hover {
         display: block;
     }
 
-    body div ul.nav_menu > li {
+    body div ul.navigation > li {
         float: none;
         width: 100%;
     }

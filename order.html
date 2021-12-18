@@ -60,29 +60,31 @@
         </div>
     </header>
     <section id="summary">
-        <h1>Header</h1>
-        <h2>by Maker</h2>
-        <h3>Rating: </h3>
-        <img src="mug.png" alt="" />
-        <p>
-            Description. Description. Description. Description. Description. Description. Description.
-            Description. Description. Description. Description. Description. Description. Description.
-            Description. Description. Description. Description. Description. Description. Description.
-        </p>
+        <h1>Merchandise</h1>
+        <img src="img1.png" alt="" id="merchImg" />
     </section>
     <section id="orderSection">
-        <form id="cart" name="cart" method="get" action="order_payment.html">
-            <table id="cartTable">
-                <caption>Shopping Cart</caption>
+        <form id="orderForm" name="orderForm" method="get" action="order_payment.html">
+            <table id="orderTable">
+                <caption>Product Order</caption>
+                <tr>
+                    <td colspan="3">
+                        <input type="text" id="orderDate" name="orderDate" readonly />
+                    </td>
+                </tr>
                 <tr>
                     <td>
-                        <label>Dunder Mifflin Mug ($24.95)</label>
-                        <input type="hidden" name="modelCost" id="modelCost" value="24.95" />
-                        <input type="hidden" id="modelName" name="modelName" value="Dunder Mifflin Mug ($24.95)" />
+                        <label for="model">Model</label>
+                        <select name="model" id="model">
+                            <option value="19.99">Sign ($19.99)</option>
+                            <option value="26.99" selected>T-Shirt ($26.99)</option>
+                            <option value="23.99">Coffee Mug ($23.99)</option>
+                        </select>
+                        <input type="hidden" id="modelName" name="modelName" />
                     </td>
                     <td class="rightA">
-                        <label for="modelQty">Qty</label>
-                        <select name="modelQty" id="modelQty">
+                        <label for="qty">Qty</label>
+                        <select name="qty" id="qty">
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -96,7 +98,7 @@
                         </select>
                     </td>
                     <td>
-                        <input type="text" name="orderCost" id="orderCost" size="10" readonly />
+                        <input type="text" name="initialCost" id="initialCost" size="10" readonly />
                     </td>
                 </tr>
                 <tr>
@@ -104,9 +106,9 @@
                         <input type="hidden" id="shippingType" name="shippingType" />
                         <fieldset>
                             <legend>Shipping</legend>
-                            <label><input type="radio" id="overnight" name="shipping" value="28.50" checked /> Overnight Shipping ($28.50 per)</label>
-                            <label><input type="radio" id="day_2" name="shipping" value="19.95" /> 2-Day Shipping ($19.95 per)</label>
-                            <label><input type="radio" id="ground" name="shipping" value="12.95" /> Ground Shipping ($12.95 per)</label>
+                            <label><input type="radio" id="overnight" name="shipping" value="27.70" checked /> Overnight Shipping ($27.70 per)</label>
+                            <label><input type="radio" id="day_2" name="shipping" value="21.15" /> 2-Day Shipping ($21.15 per)</label>
+                            <label><input type="radio" id="ground" name="shipping" value="9.20" /> Ground Shipping ($9.20 per)</label>
                         </fieldset>
                     </td>
                     <td>
@@ -116,25 +118,23 @@
                 <tr>
                     <td colspan="2" class="rightA">Subtotal</td>
                     <td class="outcell">
-                        <input type="text" name="subTotal" id="subTotal" size="10" readonly />
+                        <input type="text" name="subtotal" id="subtotal" size="10" readonly />
                     </td>
                 </tr>
-
                 <tr>
                     <td colspan="2" class="rightA">Tax (5%)</td>
                     <td>
                         <input type="text" name="salesTax" id="salesTax" size="10" readonly />
                     </td>
                 </tr>
-
                 <tr>
                     <td colspan="2" class="rightA">TOTAL</td>
                     <td>
-                        <input type="text" name="cartTotal" id="cartTotal" size="10" readonly />
+                        <input type="text" name="totalCost" id="totalCost" size="10" readonly />
                     </td>
                 </tr>
             </table>
-            <input type="submit" id="buttonAdd" value="Checkout" />
+            <input type="submit" id="buttonAdd" value="add to cart" />
         </form>
     </section>
     <footer>
