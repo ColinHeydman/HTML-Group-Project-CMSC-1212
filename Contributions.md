@@ -3,7 +3,7 @@
 ------Blayne------
 Made main outline for merchandise html
 Made merchandise css
-
+merchandise page edited and linked to the cart and javascript
 
 ------Chevy------
 
