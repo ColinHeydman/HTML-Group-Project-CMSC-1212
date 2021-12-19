@@ -64,13 +64,22 @@ function calcOrder() {
 
     var image = document.getElementById('merchImg');
     if (mIndex == 0) {
-        image.src = "img0.png";
+        image.src = "award.jpg";
     }
     else if (mIndex == 1) {
         image.src = "img1.png";
     }
-    else if (mIndex == 2) {
-        image.src = "img2.png";
+		else if (mIndex == 2) {
+        image.src = "mug.jfif";
+    }
+		else if (mIndex == 3) {
+        image.src = "pillow.jfif";
+		}
+		else if (mIndex == 4) {
+        image.src = "hat.jfif";
+		}
+		else if (mIndex == 5) {
+        image.src = "stickers.jpg";
     }
 }
 
