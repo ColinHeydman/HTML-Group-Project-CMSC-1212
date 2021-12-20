@@ -5,6 +5,7 @@
 		File: trivia_quiz.js
 */
 
+
 function resetQuiz() {
    document.quiz.quizclock.value = 0;
    for (i=0; i<document.quiz.elements.length; i++) document.quiz.elements[i].disabled=false;
@@ -23,16 +24,16 @@ function hideQuiz() {
 
 function gradeQuiz() {
    correct=0;
-   if (document.quiz.q1[1].checked) correct++;
-   if (document.quiz.q2[0].checked) correct++;
-   if (document.quiz.q3[2].checked) correct++;
-   if (document.quiz.q4[2].checked) correct++;
-   if (document.quiz.q5[1].checked) correct++;
-   if (document.quiz.q6[3].checked) correct++;
-	 if (document.quiz.q7[1].checked) correct++;
-	 if (document.quiz.q8[3].checked) correct++;
-	 if (document.quiz.q9[2].checked) correct++;
-	 if (document.quiz.q10[1].checked) correct++;
+	if (document.quiz.q1[1].checked) correct++;
+	if (document.quiz.q2[0].checked) correct++;
+	if (document.quiz.q3[2].checked) correct++;
+	if (document.quiz.q4[2].checked) correct++;
+	if (document.quiz.q5[1].checked) correct++;
+	if (document.quiz.q6[3].checked) correct++;
+	if (document.quiz.q7[1].checked) correct++;
+	if (document.quiz.q8[3].checked) correct++;
+	if (document.quiz.q9[2].checked) correct++;
+	if (document.quiz.q10[1].checked) correct++;
 	 
    document.getElementById("cor1").style.backgroundColor="yellow";
    document.getElementById("cor2").style.backgroundColor="yellow";
