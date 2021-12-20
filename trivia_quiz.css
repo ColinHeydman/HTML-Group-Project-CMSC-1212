@@ -7,7 +7,7 @@
 */
 
 
-
+/* Start/stop buttons and timer styles */
 #start{
 	width: 100px;
 	height: 50px;
@@ -47,6 +47,7 @@
 	background-color: black;
 }
 
+/* table styles */
 table{
 	visibility: hidden;
 	background-color: white;
@@ -54,18 +55,15 @@ table{
 	box-shadow: rgb(51, 51, 51) 10px 10px 25px,  rgb(51, 51, 51) -10px 10px 25px;
 }
 
-th{
+td.bottom{
 	border: solid;
 	border-width: 1px;
+	border-top: none;
+	border-left: none;
 	border-right: none;
 }
 
-#q1d, #q2d, #q3d, #q4d, #q5d, #q6d, #q7d, #q8d, #q9d, #q10d,
-#q1b, #q2b, #q3b, #q4b< #q5b, #q6b, #q7b, #q8b, #q9b, #q10b{
-	border: solid;
-	border-width: 1px;
-}
-
+/* section styles */
 section {
     background-color: #6495ED;
     padding-bottom: 15px;
