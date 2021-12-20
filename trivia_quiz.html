@@ -10,9 +10,33 @@ Colin Heydman
     <meta charset="utf-8" />
     <link href="office_reset.css" rel="stylesheet" />
     <link href="office_styles.css" rel="stylesheet" />
+		<link href="trivia_quiz.css" rel="stylesheet" />
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
     <title>The Office Fanpage | Trivia</title>
+		<script src="trivia_quiz.js" type="text/javascript" defer></script>
+		<script>
+      var seconds = 0;
+      var clockId;
+      var correctAns;
+      
+      function runClock()
+      {
+      seconds++;
+      document.quiz.quizclock.value=seconds;
+      }
+      function startClock()
+      {
+      showQuiz();
+      clockId = setInterval(runClock, 1000);
+      }
+      function stopClock()
+      {
+      clearInterval(clockId);
+      correctAns = gradeQuiz();
+      alert("You have " + correctAns + " correct out of five in " + clockId + " seconds.");
+      }
+     </script>
 </head>
 <body>
     <header>
@@ -56,227 +80,258 @@ Colin Heydman
         </div>
     </header>
     <table id="quiztable">
-        <tr>
-            <th rowspan="3">1. What was the name of Angela's cat that Dwight accidentaly killed?</th>
-            <td colspan="2">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="q1" id="q1a" /> <label for="q1a"> a) Snowball</label>
-            </td>
-            <td id="cor1">
-                <input type="radio" name="q1" id="q1c" /> <label for="q1c"> c) Sprinkles</label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="q1" id="q1b" /> <label for="q1b"> b) Midnight</label>
-            </td>
-            <td>
-                <input type="radio" name="q1" id="q1d" /> <label for="q1d"> d) Shaddow</label>
-            </td>
-        </tr>
+			<section id="main">
+         <h1>The Office Trivia</h1>
+
+         <p>Do you think you know everything about <i>The Office</i>?
+				 Then try out our trivia quiz which is made up of ten multiple choice
+				 questions from the entire series.
+         </p>
+         <p>To start the quiz, click the <b>Start Quiz</b> button below, 
+            which will reveal the first page of quiz questions and start 
+            the timer. When you have completed the questions, click 
+            the <b>Submit Answers</b> button on the quiz form.
+         </p>
+			</section>
+			
+			<section id="time">
+         <input id="start" type="button" value="Start Quiz" onclick = "startClock()" />
+		 <input name="quizclock" id="quizclock" value="Timer" />
+         <input id="stop" type="button" value="Submit Answers" onclick="stopClock()"  />
+			</section>
+			
+            <tr>
+               <th rowspan="3">1. What was the name of Angela's cat that Dwight accidentaly killed?</th>
+               <td colspan="1">
+                  
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input type="radio" name="q1" id="q1a" /> <label for="q1a"> a) Snowball</label>
+               </td>
+               <td id="cor1">
+                  <input type="radio" name="q1" id="q1c" /> <label for="q1c"> c) Sprinkles</label>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input type="radio" name="q1" id="q1b" /> <label for="q1b"> b) Midnight</label>
+               </td>
+               <td>
+                  <input type="radio" name="q1" id="q1d" /> <label for="q1d"> d) Shaddow</label>
+               </td>
+            </tr>
 
 
-        <tr>
-            <th rowspan="3">2. Who did Michael accidentaly run over?</th>
-            <td colspan="2">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="q2" id="q2a" /> <label for="q1"> <label for="q2a"> a) Meredith</label>
-            </td>
-            <td>
-                <input type="radio" name="q2" id="q2c" /> <label for="q1"> <label for="q2c"> c) Jim</label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="q2" id="q2b" /> <label for="q1"> <label for="q2b"> b) Andy</label>
-            </td>
-            <td id="cor2">
-                <input type="radio" name="q2" id="q2d" /> <label for="q1"> <label for="q2d"> d) Creed</label>
-            </td>
-        </tr>
+            <tr>
+               <th rowspan="3">2. Who did Michael accidentaly run over?</th>
+               <td colspan="1">
+                  
+               </td>
+            </tr>
+            <tr>
+               <td id="cor2">
+                  <input type="radio" name="q2" id="q2a" /> <label for="q1"> <label for="q2a"> a) Meredith</label>
+               </td>
+               <td>
+                  <input type="radio" name="q2" id="q2c" /> <label for="q1"> <label for="q2c"> c) Jim</label>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input type="radio" name="q2" id="q2b" /> <label for="q1"> <label for="q2b"> b) Andy</label>
+                </td>
+                <td>
+                   <input type="radio" name="q2" id="q2d" /> <label for="q1"> <label for="q2d"> d) Creed</label>
+                </td>
+            </tr>
 
-        <tr>
-            <th rowspan="3">3. What is michael Scott's character name in "Threat Level Midnight"?</th>
-            <td colspan="2">
-            </td>
-        </tr>
-        <tr>
-            <td id="cor3">
-                <input type="radio" name="q3" id="q3a" /> <label for="q3a"> a) Mister "M"</label>
-            </td>
-            <td>
-                <input type="radio" name="q3" id="q3c" /> <label for="q3c"> c) Scott Michaels</label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="q3" id="q3b" /> <label for="q3b"> b) Michael Scarn</label>
-            </td>
-            <td>
-                <input type="radio" name="q3" id="q3d" /> <label for="q3d"> d) Michael Scott</label>
-            </td>
-        </tr>
+            <tr>
+               <th rowspan="3">3. What is michael Scott's character name in "Threat Level Midnight"?</th>
+               <td colspan="1">
+                  
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input type="radio" name="q3" id="q3a" /> <label for="q3a"> a) Mister "M"</label>
+               </td>
+               <td>
+                  <input type="radio" name="q3" id="q3c" /> <label for="q3c"> c) Scott Michaels</label>
+               </td>
+            </tr>  
+            <tr>
+               <td id="cor3">
+                  <input type="radio" name="q3" id="q3b" /> <label for="q3b"> b) Michael Scarn</label>
+               </td>
+               <td>
+                  <input type="radio" name="q3" id="q3d" /> <label for="q3d"> d) Michael Scott</label>
+               </td>
+            </tr>
 
-        <tr>
-            <th rowspan="3">4. What is the name of the company that bought out Dunder Miflin?</th>
-            <td colspan="2">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="q4" id="q4a" /> <label for="q4a"> a) A company didn't buy out Dunder Miflin</label>
-            </td>
-            <td>
-                <input type="radio" name="q4" id="q4c" /> <label for="q4c"> c) The Michael Scott Paper Company</label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="q4" id="q4b" /> <label for="q4b"> b) Sabre</label>
-            </td>
-            <td id="cor4">
-                <input type="radio" name="q4" id="q4d" /> <label for="q4d"> d) Razer</label>
-            </td>
-        </tr>
+            <tr>
+               <th rowspan="3">4. What is the name of the company that bought out Dunder Miflin?</th>
+               <td colspan="1">
+                  
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input type="radio" name="q4" id="q4a" /> <label for="q4a"> a) A company didn't buy out Dunder Miflin</label>
+               </td>
+               <td>
+                  <input type="radio" name="q4" id="q4c" /> <label for="q4c"> c) The Michael Scott Paper Company</label>
+               </td>
+            </tr>
+            <tr>
+               <td id="cor4">
+                  <input type="radio" name="q4" id="q4b" /> <label for="q4b"> b) Sabre</label>
+               </td>
+               <td>
+                  <input type="radio" name="q4" id="q4d" /> <label for="q4d"> d) Razer</label>
+               </td>
+            </tr>
 
-        <tr>
-            <th rowspan="3">5. What is the name of Dwight's fake money?</th>
-            <td colspan="2">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="q5" id="q5a" /> <label for="q5a"> a) Beet Bucks</label>
-            </td>
-            <td>
-                <input type="radio" name="q5" id="q5c" /> <label for="q5c"> c) Schrute Bucks</label>
-            </td>
-        </tr>
-        <tr>
-            <td id="cor5">
-                <input type="radio" name="q5" id="q5b" /> <label for="q5b"> b) Dwight Dollars</label>
-            </td>
-            <td>
-                <input type="radio" name="q5" id="q5d" /> <label for="q5d"> d) He didn't have fake money.</label>
-            </td>
-        </tr>
-        <tr>
-            <th rowspan="3">6. What is Kevin's mde up number?</th>
-            <td colspan="2">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="q6" id="q6a" /> <label for="q6a"> a) Eleventeen</label>
-            </td>
-            <td id="cor1">
-                <input type="radio" name="q6" id="q6c" /> <label for="q6c"> c) Kelevinteen</label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="q6" id="q6b" /> <label for="q6b"> b) Kelevin</label>
-            </td>
-            <td>
-                <input type="radio" name="q6" id="q6d" /> <label for="q6d"> d) Kevin didn't make up a number.</label>
-            </td>
-        </tr>
+            <tr>
+               <th rowspan="3">5. What is the name of Dwight's fake money?</th>
+               <td colspan="1">
+                  
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input type="radio" name="q5" id="q5a" /> <label for="q5a"> a) Beet Bucks</label>
+               </td>
+               <td id="cor5">
+                  <input type="radio" name="q5" id="q5c" /> <label for="q5c"> c) Schrute Bucks</label>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input type="radio" name="q5" id="q5b" /> <label for="q5b"> b) Dwight Dollars</label>
+               </td>
+               <td>
+                  <input type="radio" name="q5" id="q5d" /> <label for="q5d"> d) He didn't have fake money.</label>
+               </td>
+            </tr>
+						
+						<tr>
+               <th rowspan="3">6. What is Kevin's mde up number?</th>
+               <td colspan="2">
+                  
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input type="radio" name="q6" id="q6a" /> <label for="q6a"> a) Kelevinteen</label>
+               </td>
+               <td>
+                  <input type="radio" name="q6" id="q6c" /> <label for="q6c"> c) Eleventeen</label>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input type="radio" name="q6" id="q6b" /> <label for="q6b"> b) Kevin didn't make up a number.</label>
+               </td>
+               <td id="cor6">
+                  <input type="radio" name="q6" id="q6d" /> <label for="q6d"> d) Kelevin</label>
+               </td>
+            </tr>
+						
+						<tr>
+               <th rowspan="3">7. Finish the quote, "Bears eat beets. Bears, Beats ..."</th>
+               <td colspan="2">
+                  
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input type="radio" name="q7" id="q7a" /> <label for="q7a"> a) "... and the BOYS."</label>
+               </td>
+               <td id="cor7">
+                  <input type="radio" name="q7" id="q7c" /> <label for="q7c"> c) "... Battlestar Galactica."</label>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input type="radio" name="q7" id="q7b" /> <label for="q7b"> b) "... and selling paper."</label>
+                </td>
+                <td>
+                   <input type="radio" name="q7" id="q7d" /> <label for="q7d"> d) "... and identity theft is not a joke."</label>
+                </td>
+            </tr>
+						
+						<tr>
+               <th rowspan="3">8. What nigkname does Andy give Jim?</th>
+               <td colspan="2">
+                  
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input type="radio" name="q8id=q8a" /> <label for="q8a"> a) String Bean</label>
+               </td>
+               <td>
+                  <input type="radio" name="q8" id="q8c" /> <label for="q8c"> c) Small Fry</label>
+               </td>
+            </tr>  
+            <tr>
+               <td>
+                  <input type="radio" name="q8" id="q8b" /> <label for="q8b"> b) The Paper Master</label>
+               </td>
+               <td id="cor8">
+                  <input type="radio" name="q8" id="q8d" /> <label for="q8d"> d) Big Tuna</label>
+               </td>
+            </tr>
+						
+						<tr>
+               <th rowspan="3">9. Who was Pam engaged with before Jim?</th>
+               <td colspan="2">
+                  
+               </td>
+            </tr>
+            <tr>
+               <td id="cor9">
+                  <input type="radio" name="q9" id="q9a" /> <label for="q9a"> a) Roy</label>
+               </td>
+               <td>
+                  <input type="radio" name="q9" id="q9c" /> <label for="q9c"> c) Creed</label>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input type="radio" name="q9" id="q9b" /> <label for="q9b"> b) Michael</label>
+               </td>
+               <td
+                  <input type="radio" name="q9" id="q9d" /> <label for="q9d"> d) Ryan</label>
+               </td>
+            </tr>
+						
+						<tr>
+               <th rowspan="3">10. What is Stanley's favorite day of the year?</th>
+               <td colspan="2">
+                  
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input type="radio" name="q10" id="q10a" /> <label for="q10a"> a) Christmas</label>
+               </td>
+               <td>
+                  <input type="radio" name="q10" id="q10c" /> <label for="q10c"> c) Halloween</label>
+               </td>
+            </tr>
+            <tr>
+               <td id="cor10">
+                  <input type="radio" name="q10" id="q10b" /> <label for="q10b"> b) Pretzel Day</label>
+               </td>
+               <td>
+                  <input type="radio" name="q10" id="q10d" /> <label for="q10d"> d) Beach Day</label>
+               </td>
+            </tr>
 
-
-        <tr>
-            <th rowspan="3">7. Finish the quote, "Bears eat beets. Bears, Beats ..."</th>
-            <td colspan="2">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="q7" id="q7a" /> <label for="q7"> <label for="q7a"> a) "... and the BOYS."</label>
-            </td>
-            <td>
-                <input type="radio" name="q7" id="q7c" /> <label for="q7"> <label for="q7c"> c) "... Battlestar Galactica."</label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="q7" id="q7b" /> <label for="q7"> <label for="q7b"> b) "... and selling paper."</label>
-            </td>
-            <td id="cor2">
-                <input type="radio" name="q7" id="q7d" /> <label for="q7"> <label for="q7d"> d) "... and identity theft is not a joke."</label>
-            </td>
-        </tr>
-
-        <tr>
-            <th rowspan="3">8. What nigkname does Andy give Jim?</th>
-            <td colspan="2">
-            </td>
-        </tr>
-        <tr>
-            <td id="cor3">
-                <input type="radio" name="q8id=q8a" /> <label for="q8a"> a) String Bean</label>
-            </td>
-            <td>
-                <input type="radio" name="q8" id="q8c" /> <label for="q8c"> c) Small Fry</label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="q8" id="q8b" /> <label for="q8b"> b) The Paper Master</label>
-            </td>
-            <td>
-                <input type="radio" name="q8" id="q8d" /> <label for="q8d"> d) Big Tuna</label>
-            </td>
-        </tr>
-
-        <tr>
-            <th rowspan="3">9. Who was Pam engaged with before Jim?</th>
-            <td colspan="2">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="q9" id="q9a" /> <label for="q9a"> a) Christmas</label>
-            </td>
-            <td>
-                <input type="radio" name="q9" id="q9c" /> <label for="q9c"> c) Halloween</label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="q9" id="q9b" /> <label for="q9b"> b) Pretzel Day</label>
-            </td>
-            <td id="cor4">
-                <input type="radio" name="q9" id="q9d" /> <label for="q9d"> d) Beach Day</label>
-            </td>
-        </tr>
-
-        <tr>
-            <th rowspan="3">10. What is Stanley's favorite day of the year?</th>
-            <td colspan="2">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="q10" id="q10a" /> <label for="q10a"> a) Roy</label>
-            </td>
-            <td>
-                <input type="radio" name="q10" id="q10c" /> <label for="q10c"> c) Creed</label>
-            </td>
-        </tr>
-        <tr>
-            <td id="cor5">
-                <input type="radio" name="q10" id="q10b" /> <label for="q10b"> b) Michael</label>
-            </td>
-            <td>
-                <input type="radio" name="q10" id="q10d" /> <label for="q10d"> d) Ryan</label>
-            </td>
-        </tr>
-    </table>
+         </table>
 
     </section>
     </form>
