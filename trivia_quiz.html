@@ -10,33 +10,33 @@ Colin Heydman
     <meta charset="utf-8" />
     <link href="office_reset.css" rel="stylesheet" />
     <link href="office_styles.css" rel="stylesheet" />
-		<link href="trivia_quiz.css" rel="stylesheet" />
+	<link href="trivia_quiz.css" rel="stylesheet" />
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
     <title>The Office Fanpage | Trivia</title>
-		<script src="trivia_quiz.js" type="text/javascript" defer></script>
-		<script>
-      var seconds = 0;
-      var clockId;
-      var correctAns;
-      
-      function runClock()
-      {
-      seconds++;
-      document.quiz.quizclock.value=seconds;
-      }
-      function startClock()
-      {
-      showQuiz();
-      clockId = setInterval(runClock, 1000);
-      }
-      function stopClock()
-      {
-      clearInterval(clockId);
-      correctAns = gradeQuiz();
-      alert("You have " + correctAns + " correct out of five in " + clockId + " seconds.");
-      }
-     </script>
+	<script src="trivia_quiz.js" type="text/javascript" defer></script>
+	<script>
+    var seconds = 0;
+    var clockId;
+    var correctAns;
+
+    function runClock()
+    {
+    seconds++;
+    document.quiz.quizclock.value=seconds;
+    }
+    function startClock()
+    {
+    showQuiz();
+    clockId = setInterval(runClock, 1000);
+    }
+    function stopClock()
+    {
+    clearInterval(clockId);
+    correctAns = gradeQuiz();
+    alert("You have " + correctAns + " correct out of ten in " + clockId + " seconds.");
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -80,12 +80,12 @@ Colin Heydman
         </div>
     </header>
     <table id="quiztable">
-			<section id="main">
+		 <section id="main">
          <h1>The Office Trivia</h1>
 
          <p>Do you think you know everything about <i>The Office</i>?
-				 Then try out our trivia quiz which is made up of ten multiple choice
-				 questions from the entire series.
+			Then try out our trivia quiz which is made up of ten multiple choice
+			questions from the entire series.
          </p>
          <p>To start the quiz, click the <b>Start Quiz</b> button below, 
             which will reveal the first page of quiz questions and start 
@@ -94,11 +94,11 @@ Colin Heydman
          </p>
 			</section>
 			
-			<section id="time">
-         <input id="start" type="button" value="Start Quiz" onclick = "startClock()" />
-		 <input name="quizclock" id="quizclock" value="Timer" />
-         <input id="stop" type="button" value="Submit Answers" onclick="stopClock()"  />
-			</section>
+		 <section id="time">
+			<input id="start" type="button" value="Start Quiz" onclick = "startClock()" />
+			<input name="quizclock" id="quizclock" value="0" />
+			<input id="stop" type="button" value="Submit Answers" onclick="stopClock()"  />
+		 </section>
 			
             <tr>
                <th rowspan="3">1. What was the name of Angela's cat that Dwight accidentaly killed?</th>
@@ -115,10 +115,10 @@ Colin Heydman
                </td>
             </tr>
             <tr>
-               <td>
+               <td class="bottom">
                   <input type="radio" name="q1" id="q1b" /> <label for="q1b"> b) Midnight</label>
                </td>
-               <td>
+               <td class="bottom">
                   <input type="radio" name="q1" id="q1d" /> <label for="q1d"> d) Shaddow</label>
                </td>
             </tr>
@@ -139,10 +139,10 @@ Colin Heydman
                </td>
             </tr>
             <tr>
-               <td>
+               <td class="bottom">
                   <input type="radio" name="q2" id="q2b" /> <label for="q1"> <label for="q2b"> b) Andy</label>
                 </td>
-                <td>
+                <td class="bottom">
                    <input type="radio" name="q2" id="q2d" /> <label for="q1"> <label for="q2d"> d) Creed</label>
                 </td>
             </tr>
@@ -162,10 +162,10 @@ Colin Heydman
                </td>
             </tr>  
             <tr>
-               <td id="cor3">
+               <td id="cor3" class="bottom">
                   <input type="radio" name="q3" id="q3b" /> <label for="q3b"> b) Michael Scarn</label>
                </td>
-               <td>
+               <td class="bottom">
                   <input type="radio" name="q3" id="q3d" /> <label for="q3d"> d) Michael Scott</label>
                </td>
             </tr>
@@ -185,10 +185,10 @@ Colin Heydman
                </td>
             </tr>
             <tr>
-               <td id="cor4">
+               <td id="cor4" class="bottom">
                   <input type="radio" name="q4" id="q4b" /> <label for="q4b"> b) Sabre</label>
                </td>
-               <td>
+               <td class="bottom">
                   <input type="radio" name="q4" id="q4d" /> <label for="q4d"> d) Razer</label>
                </td>
             </tr>
@@ -208,15 +208,15 @@ Colin Heydman
                </td>
             </tr>
             <tr>
-               <td>
+               <td class="bottom">
                   <input type="radio" name="q5" id="q5b" /> <label for="q5b"> b) Dwight Dollars</label>
                </td>
-               <td>
+               <td class="bottom">
                   <input type="radio" name="q5" id="q5d" /> <label for="q5d"> d) He didn't have fake money.</label>
                </td>
             </tr>
 						
-						<tr>
+			<tr>
                <th rowspan="3">6. What is Kevin's mde up number?</th>
                <td colspan="2">
                   
@@ -231,15 +231,15 @@ Colin Heydman
                </td>
             </tr>
             <tr>
-               <td>
+               <td class="bottom">
                   <input type="radio" name="q6" id="q6b" /> <label for="q6b"> b) Kevin didn't make up a number.</label>
                </td>
-               <td id="cor6">
+               <td id="cor6" class="bottom">
                   <input type="radio" name="q6" id="q6d" /> <label for="q6d"> d) Kelevin</label>
                </td>
             </tr>
 						
-						<tr>
+			<tr>
                <th rowspan="3">7. Finish the quote, "Bears eat beets. Bears, Beats ..."</th>
                <td colspan="2">
                   
@@ -254,15 +254,15 @@ Colin Heydman
                </td>
             </tr>
             <tr>
-               <td>
+               <td class="bottom">
                   <input type="radio" name="q7" id="q7b" /> <label for="q7b"> b) "... and selling paper."</label>
                 </td>
-                <td>
+                <td class="bottom">
                    <input type="radio" name="q7" id="q7d" /> <label for="q7d"> d) "... and identity theft is not a joke."</label>
                 </td>
             </tr>
 						
-						<tr>
+			<tr>
                <th rowspan="3">8. What nigkname does Andy give Jim?</th>
                <td colspan="2">
                   
@@ -270,22 +270,22 @@ Colin Heydman
             </tr>
             <tr>
                <td>
-                  <input type="radio" name="q8id=q8a" /> <label for="q8a"> a) String Bean</label>
+                  <input type="radio" name="q8" id="q8a" /> <label for="q8a"> a) String Bean</label>
                </td>
                <td>
                   <input type="radio" name="q8" id="q8c" /> <label for="q8c"> c) Small Fry</label>
                </td>
             </tr>  
             <tr>
-               <td>
+               <td class="bottom">
                   <input type="radio" name="q8" id="q8b" /> <label for="q8b"> b) The Paper Master</label>
                </td>
-               <td id="cor8">
+               <td id="cor8" class="bottom">
                   <input type="radio" name="q8" id="q8d" /> <label for="q8d"> d) Big Tuna</label>
                </td>
             </tr>
 						
-						<tr>
+			<tr>
                <th rowspan="3">9. Who was Pam engaged with before Jim?</th>
                <td colspan="2">
                   
@@ -300,15 +300,15 @@ Colin Heydman
                </td>
             </tr>
             <tr>
-               <td>
+               <td class="bottom">
                   <input type="radio" name="q9" id="q9b" /> <label for="q9b"> b) Michael</label>
                </td>
-               <td
+               <td class="bottom">
                   <input type="radio" name="q9" id="q9d" /> <label for="q9d"> d) Ryan</label>
                </td>
             </tr>
 						
-						<tr>
+			<tr>
                <th rowspan="3">10. What is Stanley's favorite day of the year?</th>
                <td colspan="2">
                   
@@ -323,17 +323,17 @@ Colin Heydman
                </td>
             </tr>
             <tr>
-               <td id="cor10">
+               <td id="cor10" class="bottom">
                   <input type="radio" name="q10" id="q10b" /> <label for="q10b"> b) Pretzel Day</label>
                </td>
-               <td>
+               <td class="bottom">
                   <input type="radio" name="q10" id="q10d" /> <label for="q10d"> d) Beach Day</label>
                </td>
             </tr>
 
          </table>
 
-    </section>
+      </section>
     </form>
     <footer>
         <nav id="bottom">
