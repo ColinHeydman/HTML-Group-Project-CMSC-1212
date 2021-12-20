@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+/*
+		Name: Colin Heydman
+	
+		File: trivia_quiz.css
+*/
+
+
+
+#start{
+	width: 100px;
+	height: 50px;
+}
+
+#stop{
+	width: 150px;
+	height: 50px;
+}
+
+#start, #stop, #quizclock {
+   display: inline-block;
+   margin: 5px 168px 5px 168px;
+	 font-face: monospace;
+	 text-align: center;
+	 font-weight: bold;
+	 color: black;
+	 font-size: 1.5em;
+}
+
+#quizclock {
+   width: 80px;
+   height: 50px;
+   line-height: 120px;
+   font-size: 2.2em;
+   font-weight: bold;
+   font-face: monospace;
+   color: black;
+   text-align: center;
+   margin: 10px auto;
+   -moz-border-radius: 60px;
+   -webkit-border-radius: 60px;
+   border-radius: 60px;
+}
+
+#time{
+	background-color: black;
+}
+
+table{
+	visibility: hidden;
+	background-color: white;
+	border-collapse: collapse;
+	box-shadow: rgb(51, 51, 51) 10px 10px 25px,  rgb(51, 51, 51) -10px 10px 25px;
+}
+
+th{
+	border: solid;
+	border-width: 1px;
+	border-right: none;
+}
+
+#q1d, #q2d, #q3d, #q4d, #q5d, #q6d, #q7d, #q8d, #q9d, #q10d,
+#q1b, #q2b, #q3b, #q4b< #q5b, #q6b, #q7b, #q8b, #q9b, #q10b{
+	border: solid;
+	border-width: 1px;
+}
+
+section {
+    background-color: #6495ED;
+    padding-bottom: 15px;
+}
+
+section h1 {
+    font-size: 2.5em;
+    color: #00008B;
+    text-shadow: white -2px 0px 1px, white -5px 0px 30px;
+    padding: 20px 15px 10px 0px;
+    text-align: left
+}
