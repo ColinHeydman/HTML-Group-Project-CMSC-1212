@@ -6,8 +6,15 @@ Made merchandise css
 merchandise page edited and linked to the cart and javascript
 
 ------Chevy------
+Main page
+Nav
+Footer
+office_styles
+office_reset
+Events page
 
 
 ------Colin------
-Made the trivia quiz page 
-
+Trivia Quiz page
+Trivia css
+Trivia js
